@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:34:00 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/25 10:38:21 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/26 11:41:10 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list *ft_lstlast(t_list *lst)
 {
     if (!lst)
         return NULL;
-    while (lst->content)
+    while (lst->next)
         lst = lst->next;
     return lst;
 }
