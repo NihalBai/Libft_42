@@ -6,25 +6,14 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:17:07 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/28 20:39:19 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:56:48 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(unsigned char c)
+int	ft_isalpha(unsigned char c)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
-}
-#include<stdio.h>
-int main()
-{
-    printf("%d\n",ft_isalpha(123457));
+	return ((c >= 'A' && c <= 'Z') \
+		|| (c >= 'a' && c <= 'z'));
 }

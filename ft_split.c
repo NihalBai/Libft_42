@@ -6,13 +6,13 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:20:44 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/28 13:31:13 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:20:52 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(const char *str, char delimiter)
+size_t	count_words(const char *str, char delimiter)
 {
 	size_t	word_count;
 	size_t	i;
@@ -33,7 +33,7 @@ static size_t	count_words(const char *str, char delimiter)
 	return (word_count);
 }
 
-static char	*create_word(const char *str, size_t start, size_t end)
+char	*create_word(const char *str, size_t start, size_t end)
 {
 	size_t	word_length;
 	size_t	j;
@@ -53,7 +53,7 @@ static char	*create_word(const char *str, size_t start, size_t end)
 	return (new_word);
 }
 
-static void	free_memory(char **array)
+void	free_memory(char **array)
 {
 	size_t	k;
 
@@ -66,7 +66,8 @@ static void	free_memory(char **array)
 	free(array);
 }
 
-static char	**populate_and_free(char **array, const char *str, char delimiter, size_t wc)
+char	**populate_and_free(char **array, const char *str, \
+		char delimiter, size_t wc)
 {
 	size_t	i;
 	size_t	j;

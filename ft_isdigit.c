@@ -6,20 +6,13 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:22:10 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/28 10:28:29 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:26:51 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9')
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	return (c >= '0' && c <= '9');
 }

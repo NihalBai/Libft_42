@@ -6,20 +6,13 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:32:58 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/28 10:28:44 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:29:03 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= ' ' && c <= '~')
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	return (c >= ' ' && c <= '~');
 }
