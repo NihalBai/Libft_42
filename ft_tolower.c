@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:25:55 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/22 18:34:10 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 20:34:12 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int ft_tolower(int c)
 {
     if (c >= 'A' && c <= 'Z')
         return (c + 32);
-    return c;
+    return (c);
 }

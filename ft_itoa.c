@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:37:55 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/24 12:19:52 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 10:44:44 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t count(int n)
     size_t c = 0;
     if (n <= 0)
     {
-        c = 1;  
+        c = 1;
         n = -n;
     }
     while (n != 0)
@@ -32,12 +32,13 @@ char *ft_itoa(int n)
 {
     char *r;
     size_t c;
-    long nb = n;
-    
-    c = count(n);
+    long nb;
+
+    nb = n;
+    c = count(nb);
     r = malloc(c + 1);
     if (!r)
-        return NULL;
+        return (NULL);
     r[c] = '\0';
     if (nb < 0)
     {

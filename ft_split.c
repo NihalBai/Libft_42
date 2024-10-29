@@ -6,107 +6,107 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:20:44 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/24 17:52:19 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:31:13 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int find_s(char s, char c)
+static size_t	count_words(const char *str, char delimiter)
 {
-	if (s == c)
-		return (1);
-	return (0);
-}
+	size_t	word_count;
+	size_t	i;
 
-size_t countW(char const *s, char c)
-{
-	size_t r;
-	int i;
-
-	r = 0;
 	i = 0;
-	while (s[i])
+	word_count = 0;
+	while (str[i])
 	{
-		while (s[i] && find_s(s[i], c))
-			i++;
-		if (s[i])
-			r++;
-		while (s[i] && !find_s(s[i], c))
+		if (str[i] != delimiter)
+		{
+			word_count++;
+			while (str[i] && str[i] != delimiter)
+				i++;
+		}
+		else
 			i++;
 	}
-	return (r);
+	return (word_count);
 }
 
-int word_len(const char *str, char c)
+static char	*create_word(const char *str, size_t start, size_t end)
 {
-	int len;
+	size_t	word_length;
+	size_t	j;
+	char	*new_word;
 
-	len = 0;
-	while (str[len] && !find_s(str[len], c))
-		len++;
-	return (len);
-}
-
-char *extract_word(const char *s, char c)
-{
-	char *word;
-	int i;
-	int len;
-
-	len = word_len(s, c);
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	if (!word)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		word[i] = s[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
-
-void myFree(char **s, int i)
-{
-	int j;
-
+	word_length = end - start;
 	j = 0;
-	while (j < i)
+	new_word = (char *)malloc(word_length + 1);
+	if (new_word == NULL)
+		return (NULL);
+	while (j < word_length)
 	{
-		free(s[j]);
+		new_word[j] = str[start + j];
 		j++;
 	}
-	free(s);
+	new_word[word_length] = '\0';
+	return (new_word);
 }
 
-char **ft_split(char const *s, char c)
+static void	free_memory(char **array)
 {
-	char **p;
-	int i;
+	size_t	k;
 
-	p = (char **)malloc(sizeof(char *) * (countW(s, c) + 1));
-	if (!p)
-		return (NULL);
-	i = 0;
-	while (*s)
+	k = 0;
+	while (array[k])
 	{
-		while (*s && find_s(*s, c))
-			s++;
-		if (*s)
+		free(array[k]);
+		k++;
+	}
+	free(array);
+}
+
+static char	**populate_and_free(char **array, const char *str, char delimiter, size_t wc)
+{
+	size_t	i;
+	size_t	j;
+	size_t	start;
+
+	i = 0;
+	j = 0;
+	while (str[i] && j < wc)
+	{
+		if (str[i] != delimiter)
 		{
-			p[i] = extract_word(s, c);
-			if (!p[i])
+			start = i;
+			while (str[i] && str[i] != delimiter)
+				i++;
+			array[j] = create_word(str, start, i);
+			if (array[j] == NULL)
 			{
-				myFree(p, i);
+				free_memory(array);
 				return (NULL);
 			}
-			i++;
+			j++;
 		}
-		while (*s && !find_s(*s, c))
-			s++;
+		else
+			i++;
 	}
-	p[i] = NULL;
-	return (p);
+	return (array[j] = NULL, array);
+}
+
+char	**ft_split(char const *str, char delimiter)
+{
+	size_t	word_count;
+	char	**array;
+
+	if (str == NULL)
+		return (NULL);
+	word_count = count_words(str, delimiter);
+	array = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (array == NULL)
+		return (NULL);
+	if (populate_and_free(array, str, delimiter, word_count) == NULL)
+		return (NULL);
+	return (array);
 }

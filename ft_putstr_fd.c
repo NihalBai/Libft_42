@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:25:42 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/25 09:21:47 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:42:35 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void ft_putstr_fd(char *s, int fd)
     int i;
 
     if (fd < 0)
-		return ;
-    i=0;
+        return ;
+    i = 0;
     while (s[i])
     {
-        write(fd,&s[i],1);
+        write(fd, &s[i], 1);
         i++;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:22:10 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/22 11:10:18 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 10:28:29 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 int ft_isdigit(int c)
 {
-     if (c >= '0' && c <= '9')
-        return 1;
-    else 
-        return 0;
+    if (c >= '0' && c <= '9')
+    {
+        return (1);
+    }
+    else
+    {
+        return (0);
+    }
 }

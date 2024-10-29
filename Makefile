@@ -6,11 +6,11 @@
 #    By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/22 09:51:28 by nbaidaou          #+#    #+#              #
-#    Updated: 2024/10/25 10:02:40 by nbaidaou         ###   ########.fr        #
+#    Updated: 2024/10/28 09:27:03 by nbaidaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
@@ -20,9 +20,9 @@ CFILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c
 
-BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-			ft_lstmap.c
+BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c
 
 OFILES = $(CFILES:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
@@ -33,14 +33,12 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	ar rc $(NAME) $(OFILES)
-	ranlib $(NAME)
 
-%.o: %.c includes/ft.h
-	$(CC) $(CFLAGS) -I includes -c $< -o $@
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(OFILES) $(BONUS_OBJ)
 	ar rc $(NAME) $(OFILES) $(BONUS_OBJ)
-	ranlib $(NAME)
 
 clean:
 	$(RM) $(OFILES) $(BONUS_OBJ)
@@ -49,3 +47,4 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+.PHONY: all clean fclean re

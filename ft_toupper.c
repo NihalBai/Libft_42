@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:35:01 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/22 18:37:52 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 20:34:47 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int ft_toupper(int c)
 {
     if (c >= 'a' && c <= 'z')
         return (c - 32);
-    return c;
+    return (c);
 }

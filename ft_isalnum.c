@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:13:06 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/22 11:10:14 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 10:26:28 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 int ft_isalnum(int c)
 {
     if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return 1;
-    else 
-        return 0;
+    {
+        return (1);
+    }
+    else
+    {
+        return (0);
+    }
 }

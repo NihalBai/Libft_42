@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:32:58 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/22 11:13:52 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 10:28:44 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 int ft_isprint(int c)
 {
     if (c >= ' ' && c <= '~')
-        return 1;
-    else 
-        return 0;
+    {
+        return (1);
+    }
+    else
+    {
+        return (0);
+    }
 }

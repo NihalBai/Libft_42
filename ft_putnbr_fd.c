@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:33:23 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/25 09:21:45 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:42:10 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ void ft_putnbr_fd(int n, int fd)
 {
     char c;
 
-	if (fd < 0)
-		return ;
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n >= 0 && n <= 9)
-	{
-		ft_putchar_fd(n + '0',fd);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10,fd);
-		ft_putnbr_fd(n % 10,fd);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-',fd);
-		n *= -1;
-		ft_putnbr_fd(n,fd);
-	}
+    if (fd < 0)
+        return ;
+    if (n == -2147483648)
+        write(fd, "-2147483648", 11);
+    else if (n >= 0 && n <= 9)
+    {
+        ft_putchar_fd(n + '0', fd);
+    }
+    else if (n > 9)
+    {
+        ft_putnbr_fd(n / 10, fd);
+        ft_putnbr_fd(n % 10, fd);
+    }
+    else if (n < 0)
+    {
+        ft_putchar_fd('-', fd);
+        n *= -1;
+        ft_putnbr_fd(n, fd);
+    }
 }
