@@ -6,7 +6,7 @@
 /*   By: nbaidaou <nbaidaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:12:03 by nbaidaou          #+#    #+#             */
-/*   Updated: 2024/10/29 11:40:13 by nbaidaou         ###   ########.fr       */
+/*   Updated: 2024/10/30 09:51:29 by nbaidaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	handle_overflow(int sign)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	r;
 	long	n;
 
@@ -30,9 +30,9 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	r = 0;
 	n = 0;
-	while (str[i] == ' ' || str[i] == '\t' 
-			|| str[i] == '\r' || str[i] == '\v' 
-			|| str[i] == '\n' || str[i] == '\f')
+	while (str[i] == ' ' || str[i] == '\t'
+		|| str[i] == '\r' || str[i] == '\v'
+		|| str[i] == '\n' || str[i] == '\f')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
